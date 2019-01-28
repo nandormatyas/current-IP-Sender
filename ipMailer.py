@@ -4,12 +4,12 @@ import env
 
 port = 465  # For SSL
 smtp_server = "smtp.gmail.com"
-sender_email = env.os.environ['SENDER']  # Enter your address
-receiver_email = env.os.environ['RECEIEVER']  # Enter receiver address
+sender_email = env.os.environ['SENDER']
+receiver_email = env.os.environ['RECEIEVER']
 password = env.os.environ['PASS']
 message2 = ipGetter.ipGetter()
 message = """\
-Subject: Hi there
+Subject: Your home server IP changed
 
 Your IP has changed to {}""".format(message2)
 
