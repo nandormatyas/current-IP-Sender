@@ -6,6 +6,8 @@ import schedule
 import time
 import datetime
 
+period = input("How often would you like to check your ip in minutes? ")
+print("Watching...")
 port = 465  # For SSL
 smtp_server = "smtp.gmail.com"
 sender_email = env.os.environ['SENDER']
@@ -30,7 +32,7 @@ def mailer():
         fileController.logCreator(str(datetime.datetime.now()), "Ip has not changed since last check")
         print("Ip did not change")
 
-schedule.every(1).minutes.do(mailer)
+schedule.every(int(period)).minutes.do(mailer)
 
 while True:
     schedule.run_pending()
