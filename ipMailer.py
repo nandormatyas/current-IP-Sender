@@ -1,8 +1,10 @@
 import smtplib, ssl
 import ipGetter
+import fileController
 import env
 import schedule
 import time
+import datetime
 
 port = 465  # For SSL
 smtp_server = "smtp.gmail.com"
@@ -23,10 +25,12 @@ def mailer():
             server.login(sender_email, password)
             server.sendmail(sender_email, receiver_email, message)
             print("Email sent")
+            fileController.logCreator(str(datetime.datetime.now()), "Ip changed, email sent! \n New IP: {}".format(message2))
     else :
+        fileController.logCreator(str(datetime.datetime.now()), "Ip has not changed since last check")
         print("Ip did not change")
 
-schedule.every(30).minutes.do(mailer)
+schedule.every(1).minutes.do(mailer)
 
 while True:
     schedule.run_pending()
