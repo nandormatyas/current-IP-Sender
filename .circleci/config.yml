@@ -11,7 +11,7 @@ jobs:
       - checkout
       #- run: pip3 install
       - run: pip3 install pytest --user
-      - run: pytest
+      - run: py.test
 
         
       # run tests!
