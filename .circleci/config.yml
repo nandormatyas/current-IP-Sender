@@ -9,8 +9,8 @@ jobs:
 
     steps:
       - checkout
-      - run: pip install pytest
-      - run: pytest
+      - run: pip3 install pytest3
+      - run: pytest-3
 
         
       # run tests!
