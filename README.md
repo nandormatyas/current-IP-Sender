@@ -9,3 +9,5 @@ This little program checks the ip address and if it has changed sends it to your
 Configured to use gmail as smtp.
 
 Also creates logs about checks.
+
+Run ipMailer.py to use.
