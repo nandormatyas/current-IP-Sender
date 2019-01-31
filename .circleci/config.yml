@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - checkout
-      - run: pip3 install pytest3
+      - run: pip3 install pytest-3
       - run: pytest-3
 
         
