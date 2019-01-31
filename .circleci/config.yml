@@ -10,8 +10,8 @@ jobs:
     steps:
       - checkout
       #- run: pip3 install
-      - run: pip3 install pytest --user
-      - run: py.test
+      - run: sudo pip3 install pytest 
+      - run: pytest
 
         
       # run tests!
